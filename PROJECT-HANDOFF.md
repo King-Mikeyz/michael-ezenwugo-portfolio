@@ -336,3 +336,69 @@ Priority order:
 9. Add custom domain, sitemap, robots and social metadata.
 
 The portfolio should remain truthful, performant and recruiter-friendly even as the visual experience becomes more ambitious.
+
+---
+
+# Refinement Update
+
+The portfolio has now completed its first major production refinement.
+
+## Added since the original handoff
+
+Custom ME favicon and navbar identity.
+
+Dark purple premium visual system.
+
+Solid high-contrast AI assistant surface.
+
+Solid premium contact console.
+
+Project cards upgraded into mini case studies.
+
+LANVINS includes a working live project link.
+
+Knowledge graph upgraded from decorative nodes into a semantic skill graph.
+
+Skill Explorer now communicates with the Three.js graph.
+
+Hovering skills can focus their related graph neighborhood.
+
+Currently Learning section added.
+
+Learning direction is shown as Now, Next and Direction rather than fake proficiency percentages.
+
+Three.js is loaded through a client-only dynamic wrapper to reduce first-render interference.
+
+Open Graph social sharing image added.
+
+SEO metadata improved.
+
+robots.txt added.
+
+sitemap.xml added.
+
+## Current major remaining work
+
+Get Michael's exact professional LinkedIn URL.
+
+Confirm Michael's public professional email.
+
+Finish and rewrite Michael's CV/resume.
+
+Add the finished resume PDF and a visible Resume link.
+
+Get or create a professional portrait.
+
+Evaluate generated King Michael / ME logo concepts against the current monogram.
+
+Run a measured Lighthouse/Core Web Vitals audit.
+
+Improve any remaining mobile layout issues.
+
+Possibly connect AI answers directly to knowledge graph node highlighting.
+
+Possibly add richer project case-study pages after more projects are completed.
+
+Do not add new decorative effects unless they improve the portfolio's story or usability.
+
+The next session should prioritize real professional information and measured QA rather than more feature development.
