@@ -58,9 +58,9 @@ export default function Hero() {
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
-              href="#projects"
-              className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black transition duration-300 hover:scale-[1.025]"
-            >
+             href="#projects"
+              className="group flex items-center gap-3 rounded-full border border-[var(--border-bright)] bg-[linear-gradient(135deg,#8b5cf6,#6d3fe0)] px-6 py-3.5 text-sm font-medium text-white shadow-[0_10px_40px_rgba(139,92,246,0.18)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_50px_rgba(139,92,246,0.3)]"
+             >
               Explore my work
 
               <ArrowDownRight
@@ -88,18 +88,14 @@ export default function Hero() {
           aria-hidden="true"
           className="relative hidden min-h-[700px] lg:block"
         >
-          {/* Coordinates */}
-          <div className="absolute bottom-16 right-0 font-mono-custom text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">
-            <p>System // 001</p>
-            <p className="mt-1">Intelligence in progress</p>
-          </div>
+          
         </div>
       </div>
 
       {/* Bottom line */}
       <div className="absolute bottom-8 left-6 right-6 z-20 mx-auto flex max-w-7xl items-center gap-4">
         <span className="font-mono-custom text-[9px] uppercase tracking-[0.25em] text-[var(--muted)]">
-          Scroll to explore
+          
         </span>
 
         <div className="h-px flex-1 bg-gradient-to-r from-white/10 via-[var(--purple)]/30 to-transparent" />
