@@ -7,7 +7,13 @@ export const projects = [
     type: "Frontend Development",
 
     description:
-      "A modern fashion web experience focused on interface design, responsive development, motion and frontend interaction.",
+      "A modern fashion-focused web experience built around responsive interface design, motion and polished frontend interaction.",
+
+    focus:
+      "Responsive UI, visual hierarchy, interaction and motion.",
+
+    demonstrates:
+      "React-based frontend development and attention to interface presentation.",
 
     stack: [
       "React",
@@ -36,7 +42,13 @@ export const projects = [
     type: "Full-stack Experiment",
 
     description:
-      "A digital accountability system created to replace manual WhatsApp community check-ins with a dedicated web application.",
+      "A web-based accountability platform designed to replace manual daily WhatsApp check-ins with a dedicated application.",
+
+    focus:
+      "Authentication, member workflows, persistent data and accountability tracking.",
+
+    demonstrates:
+      "My early experimentation with frontend development connected to Supabase and PostgreSQL.",
 
     stack: [
       "JavaScript",
@@ -64,7 +76,13 @@ export const projects = [
     type: "Team Capstone Project",
 
     description:
-      "A collaborative capstone project exploring a platform for connecting volunteers with opportunities.",
+      "A collaborative capstone project exploring a platform for connecting volunteers with suitable opportunities.",
+
+    focus:
+      "Collaborative frontend development and product implementation.",
+
+    demonstrates:
+      "Experience contributing within a team project rather than working entirely alone.",
 
     stack: [
       "Frontend",
