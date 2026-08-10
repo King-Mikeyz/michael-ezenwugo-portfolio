@@ -54,7 +54,7 @@ export default function Contact() {
       <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
         <div>
           <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
-            05 / Contact
+            06 / Contact
           </p>
 
           <h2 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-7xl">
