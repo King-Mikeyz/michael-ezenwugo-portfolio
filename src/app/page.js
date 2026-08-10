@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollMotion from "@/components/layout/ScrollMotion";
-
+import BackgroundAtmosphere from "@/components/layout/BackgroundAtmosphere";
 import ExperienceCanvas from "@/components/three/ExperienceCanvas";
 
 import Hero from "@/components/sections/Hero";

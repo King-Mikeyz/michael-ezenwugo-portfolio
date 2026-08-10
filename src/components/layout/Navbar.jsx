@@ -3,40 +3,63 @@ import { profile } from "@/data/profile";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <a href="#home" className="text-lg font-semibold tracking-tight">
-          ME<span className="text-[var(--cyan)]">.</span>
-        </a>
+    <header className="fixed left-0 top-0 z-50 w-full">
+      <div className="mx-auto max-w-7xl px-5 pt-5 md:px-6">
+        <nav className="flex items-center justify-between rounded-full border border-white/[0.07] bg-black/20 px-4 py-3 backdrop-blur-xl md:px-5">
+          
+          {/* Logo */}
+          <a
+            href="#home"
+            className="group flex items-center gap-3"
+          >
+            <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
+              <span className="text-sm font-semibold tracking-[-0.04em]">
+                ME
+              </span>
 
-        <div className="hidden items-center gap-8 text-sm text-[var(--muted)] md:flex">
-          <a href="#about" className="transition hover:text-white">
-            About
+              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-[var(--purple-light)] shadow-[0_0_12px_var(--purple)]" />
+            </div>
+
+            <span className="hidden text-sm font-medium text-[var(--muted-light)] sm:block">
+              Michael Ezenwugo
+            </span>
           </a>
 
-          <a href="#projects" className="transition hover:text-white">
-            Projects
-          </a>
+          {/* Navigation */}
+          <div className="hidden items-center gap-1 rounded-full border border-white/[0.05] bg-white/[0.025] p-1 md:flex">
+            {[
+              ["About", "#about"],
+              ["Skills", "#skills"],
+              ["Projects", "#projects"],
+              ["Journey", "#journey"],
+              ["AI", "#ask-ai"],
+            ].map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                className="rounded-full px-4 py-2 text-xs text-[var(--muted)] transition duration-300 hover:bg-white/[0.05] hover:text-white"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
 
-          <a href="#journey" className="transition hover:text-white">
-            Journey
-          </a>
+          {/* GitHub */}
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs transition duration-300 hover:border-[var(--border-bright)] hover:bg-[var(--glow-purple)]"
+          >
+            GitHub
 
-          <a href="#contact" className="transition hover:text-white">
-            Contact
+            <ExternalLink
+              size={14}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
           </a>
-        </div>
-
-        <a
-          href={profile.github}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub"
-          className="rounded-full border border-[var(--border)] p-3 transition hover:border-[var(--cyan)]"
-        >
-          <ExternalLink size={18} />
-        </a>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }
