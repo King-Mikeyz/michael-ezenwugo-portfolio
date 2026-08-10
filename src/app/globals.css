@@ -183,3 +183,67 @@ a {
     var(--font-geist-mono),
     monospace;
 }
+
+/* ---------------------------------
+   AMBIENT MOTION
+---------------------------------- */
+
+@keyframes ambient-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(30px, -20px, 0) scale(1.06);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.ambient-drift {
+  animation: ambient-drift 14s ease-in-out infinite;
+}
+
+.soft-pulse {
+  animation: soft-pulse 3.5s ease-in-out infinite;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--purple-light);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ambient-drift,
+  .soft-pulse {
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}

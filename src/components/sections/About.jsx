@@ -1,30 +1,57 @@
 export default function About() {
   return (
-    <section id="about" className="px-6 py-32">
-      <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
-        <div>
-          <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
+    <section
+      id="about"
+      className="relative min-h-[90vh] px-6 py-36"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl lg:max-w-[58%]">
+          <p className="font-mono-custom mb-6 text-[10px] uppercase tracking-[0.28em] text-[var(--purple-light)]">
             01 / About
           </p>
 
-          <h2 className="text-5xl font-semibold tracking-tight md:text-7xl">
-            Building now.
+          <h2 className="text-5xl font-semibold tracking-[-0.055em] md:text-7xl">
+            Still learning.
             <br />
-            Learning what&apos;s next.
+            <span className="gradient-text">
+              Already building.
+            </span>
           </h2>
-        </div>
 
-        <div className="flex items-end">
-          <p className="max-w-xl text-lg leading-8 text-[var(--muted)]">
-            I&apos;m a frontend developer and Computer Science student
-            progressively moving deeper into data science, artificial
-            intelligence and machine learning.
-            <br />
-            <br />
-            I&apos;m interested in building useful digital products while
-            understanding the intelligent systems that will shape the next
-            generation of software.
+          <p className="mt-10 max-w-2xl text-lg leading-8 text-[var(--muted-light)]">
+            I&apos;m a Computer Science student with a frontend
+            development foundation and a growing focus on data,
+            artificial intelligence and machine learning.
           </p>
+
+          <p className="mt-5 max-w-2xl leading-8 text-[var(--muted)]">
+            I enjoy turning ideas into working digital products,
+            experimenting with AI-assisted development and gradually
+            building the technical depth required for intelligent
+            software systems.
+          </p>
+
+          <div className="mt-14 border-t border-white/[0.08]">
+            {[
+              ["Education", "200 Level Computer Science"],
+              ["Foundation", "Frontend Development · Tech Crush"],
+              ["AI", "Prompt Engineering · Tech Crush"],
+              ["Now", "Python · Kaggle · Data Science"],
+            ].map(([label, value]) => (
+              <div
+                key={label}
+                className="grid gap-2 border-b border-white/[0.08] py-5 sm:grid-cols-[130px_1fr]"
+              >
+                <span className="font-mono-custom text-[10px] uppercase tracking-[0.2em] text-[var(--purple-light)]">
+                  {label}
+                </span>
+
+                <span className="text-[var(--muted-light)]">
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

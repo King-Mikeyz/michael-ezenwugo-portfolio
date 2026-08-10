@@ -9,7 +9,7 @@ export default function BackgroundAtmosphere() {
 
       {/* Purple atmospheric light */}
       <div className="absolute -right-[15rem] -top-[18rem] h-[45rem] w-[45rem] rounded-full bg-[var(--purple)] opacity-[0.11] blur-[150px]" />
-
+       <div className="ambient-drift absolute -right-[15rem] -top-[18rem] h-[45rem] w-[45rem] rounded-full bg-[var(--purple)] opacity-[0.11] blur-[150px]" />
       {/* Secondary violet field */}
       <div className="absolute -left-[20rem] top-[40%] h-[40rem] w-[40rem] rounded-full bg-[var(--purple-deep)] opacity-[0.08] blur-[160px]" />
 
