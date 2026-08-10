@@ -21,24 +21,25 @@ export default function AIChat() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
 
+  const isLoading = status === "loading";
+
   async function askAI(questionToAsk) {
     const cleanQuestion = questionToAsk.trim();
 
-    if (!cleanQuestion || status === "loading") return;
+    if (!cleanQuestion || isLoading) return;
+
+    // Keep the input empty after submitting,
+    // including when a suggestion is clicked.
+    setQuestion("");
+    setError("");
+    setStatus("loading");
 
     try {
-      setQuestion(cleanQuestion);
-      setAnswer("");
-      setError("");
-      setStatus("loading");
-
       const response = await fetch("/api/ask", {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify({
           question: cleanQuestion,
         }),
@@ -55,9 +56,12 @@ export default function AIChat() {
       setAnswer(data.answer);
       setStatus("success");
     } catch (error) {
+      console.error("Ask Michael error:", error);
+
       setError(
-        error.message ||
-          "Something went wrong while contacting the AI."
+        error instanceof Error
+          ? error.message
+          : "Something went wrong while contacting the AI."
       );
 
       setStatus("error");
@@ -69,10 +73,28 @@ export default function AIChat() {
     askAI(question);
   }
 
+  function handleKeyDown(event) {
+    // Enter sends.
+    // Shift + Enter creates a new line.
+    if (
+      event.key === "Enter" &&
+      !event.shiftKey &&
+      !event.nativeEvent.isComposing
+    ) {
+      event.preventDefault();
+      askAI(question);
+    }
+  }
+
   return (
-    <section id="ask-ai" className="px-6 py-32">
+    <section
+      id="ask-ai"
+      className="px-6 py-32"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+          
+          {/* Section intro */}
           <div>
             <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
               05 / Intelligence
@@ -90,12 +112,15 @@ export default function AIChat() {
             </h2>
 
             <p className="mt-8 max-w-md leading-7 text-[var(--muted)]">
-              Ask about my projects, current skills, learning journey
-              or the direction I&apos;m heading in.
+              Ask about my projects, current skills, learning
+              journey or the direction I&apos;m heading in.
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
+          {/* AI interface */}
+          <div className="relative min-h-[620px] overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
+            
+            {/* Header */}
             <div className="mb-10 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)]">
@@ -103,7 +128,9 @@ export default function AIChat() {
                 </div>
 
                 <div>
-                  <p className="font-medium">Ask Michael</p>
+                  <p className="font-medium">
+                    Ask Michael
+                  </p>
 
                   <p className="text-xs text-[var(--muted)]">
                     AI portfolio assistant
@@ -117,66 +144,96 @@ export default function AIChat() {
               </div>
             </div>
 
-            {!answer && status !== "loading" && (
-              <div className="mb-10">
-                <div className="mb-5 flex items-center gap-2 text-sm text-[var(--muted)]">
-                  <Sparkles size={15} />
-                  Try asking
+            {/* Suggestions stay visible */}
+            <div className="mb-8">
+              <div className="mb-5 flex items-center gap-2 text-sm text-[var(--muted)]">
+                <Sparkles size={15} />
+                Try asking
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {suggestions.map((suggestion) => (
+                  <button
+                    key={suggestion}
+                    type="button"
+                    disabled={isLoading}
+                    onClick={() => askAI(suggestion)}
+                    className="rounded-full border border-[var(--border)] px-4 py-2 text-left text-sm text-[var(--muted)] transition hover:border-[var(--cyan)] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    {suggestion}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Stable response area */}
+            <div
+              aria-live="polite"
+              aria-busy={isLoading}
+              className="min-h-[220px] max-h-[260px] overflow-y-auto border-y border-[var(--border)] py-6"
+            >
+              {isLoading && (
+                <div className="flex min-h-[160px] items-center gap-3 text-[var(--muted)]">
+                  <Loader2
+                    size={18}
+                    className="animate-spin"
+                  />
+
+                  <p>Thinking about that...</p>
                 </div>
+              )}
 
-                <div className="flex flex-wrap gap-2">
-                  {suggestions.map((suggestion) => (
-                    <button
-                      key={suggestion}
-                      type="button"
-                      onClick={() => askAI(suggestion)}
-                      className="rounded-full border border-[var(--border)] px-4 py-2 text-left text-sm text-[var(--muted)] transition hover:border-[var(--cyan)] hover:text-white"
-                    >
-                      {suggestion}
-                    </button>
-                  ))}
+              {!isLoading && answer && (
+                <div>
+                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--cyan)]">
+                    Response
+                  </p>
+
+                  <p className="whitespace-pre-line text-lg leading-8">
+                    {answer}
+                  </p>
                 </div>
-              </div>
-            )}
+              )}
 
-            {status === "loading" && (
-              <div className="my-14 flex items-center gap-3 text-[var(--muted)]">
-                <Loader2
-                  size={18}
-                  className="animate-spin"
-                />
+              {!isLoading &&
+                !answer &&
+                !error && (
+                  <div className="flex min-h-[160px] items-center">
+                    <p className="max-w-md text-[var(--muted)]">
+                      Ask a question or choose one of the
+                      suggestions above.
+                    </p>
+                  </div>
+                )}
 
-                <p>Thinking about that...</p>
-              </div>
-            )}
+              {!isLoading && error && (
+                <div className="flex min-h-[160px] items-center">
+                  <p className="text-sm text-red-400">
+                    {error}
+                  </p>
+                </div>
+              )}
+            </div>
 
-            {answer && (
-              <div className="my-8">
-                <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--cyan)]">
-                  Response
-                </p>
-
-                <p className="whitespace-pre-line text-lg leading-8">
-                  {answer}
-                </p>
-              </div>
-            )}
-
-            {error && (
-              <p className="my-6 text-sm text-red-400">
-                {error}
-              </p>
-            )}
-
+            {/* Input */}
             <form
               onSubmit={handleSubmit}
-              className="mt-8 flex items-end gap-3 border-t border-[var(--border)] pt-6"
+              className="mt-6 flex items-end gap-3"
             >
+              <label
+                htmlFor="portfolio-question"
+                className="sr-only"
+              >
+                Ask Michael a question
+              </label>
+
               <textarea
+                id="portfolio-question"
                 value={question}
                 onChange={(event) =>
                   setQuestion(event.target.value)
                 }
+                onKeyDown={handleKeyDown}
                 maxLength={500}
                 rows={2}
                 placeholder="Ask something about Michael..."
@@ -186,12 +243,16 @@ export default function AIChat() {
               <button
                 type="submit"
                 disabled={
-                  !question.trim() || status === "loading"
+                  !question.trim() || isLoading
                 }
-                aria-label="Ask Michael"
+                aria-label={
+                  isLoading
+                    ? "Michael's AI is answering"
+                    : "Ask Michael"
+                }
                 className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-black transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
               >
-                {status === "loading" ? (
+                {isLoading ? (
                   <Loader2
                     size={18}
                     className="animate-spin"
@@ -202,9 +263,15 @@ export default function AIChat() {
               </button>
             </form>
 
-            <p className="mt-4 text-xs text-[var(--muted)]">
-              Answers are generated from Michael&apos;s portfolio information.
-            </p>
+            <div className="mt-4 flex items-center justify-between gap-4 text-xs text-[var(--muted)]">
+              <p>
+                Answers use Michael&apos;s portfolio information.
+              </p>
+
+              <p>
+                {question.length}/500
+              </p>
+            </div>
           </div>
         </div>
       </div>

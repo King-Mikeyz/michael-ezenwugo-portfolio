@@ -1,6 +1,39 @@
 import { GoogleGenAI } from "@google/genai";
 import { getPortfolioContext } from "@/lib/portfolio-context";
 
+function cleanAIAnswer(text = "") {
+  return text
+    // Remove bold and italic Markdown
+    .replace(/\*\*/g, "")
+    .replace(/\*/g, "")
+
+    // Remove Markdown headings
+    .replace(/^#{1,6}\s*/gm, "")
+
+    // Remove code formatting
+    .replace(/`{1,3}/g, "")
+
+    // Remove Markdown bullet symbols
+    .replace(/^\s*[-+•]\s+/gm, "")
+
+    // Remove numbered list prefixes such as 1. or 1)
+    .replace(/^\s*\d+[.)]\s+/gm, "")
+
+    // Replace em dashes and en dashes
+    .replace(/\s*[—–]\s*/g, ", ")
+
+    // Remove accidental duplicate commas
+    .replace(/,\s*,/g, ", ")
+
+    // Remove trailing spaces from lines
+    .replace(/[ \t]+$/gm, "")
+
+    // Prevent excessive blank lines
+    .replace(/\n{3,}/g, "\n\n")
+
+    .trim();
+}
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -9,15 +42,23 @@ export async function POST(request) {
 
     if (!question) {
       return Response.json(
-        { error: "Please ask a question." },
-        { status: 400 }
+        {
+          error: "Please ask a question.",
+        },
+        {
+          status: 400,
+        }
       );
     }
 
     if (question.length > 500) {
       return Response.json(
-        { error: "Please keep your question under 500 characters." },
-        { status: 400 }
+        {
+          error: "Please keep your question under 500 characters.",
+        },
+        {
+          status: 400,
+        }
       );
     }
 
@@ -39,15 +80,17 @@ export async function POST(request) {
       system_instruction: getPortfolioContext(),
 
       generation_config: {
-        temperature: 0.35,
+        temperature: 0.3,
         thinking_level: "low",
       },
     });
 
-    const answer =
+    const rawAnswer =
       interaction.output_text ??
       interaction.outputText ??
       "I couldn't generate an answer right now.";
+
+    const answer = cleanAIAnswer(rawAnswer);
 
     return Response.json({
       answer,
