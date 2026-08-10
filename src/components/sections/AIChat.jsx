@@ -118,10 +118,14 @@ export default function AIChat() {
           </div>
 
           {/* AI interface */}
-          <div className="relative min-h-[620px] overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
-            
+          <div className="relative min-h-[620px] overflow-hidden rounded-[2rem] border border-[rgba(180,154,255,0.22)] bg-[rgba(10,6,16,0.94)] p-6 shadow-[0_24px_90px_rgba(76,29,149,0.20)] backdrop-blur-xl md:p-8">
+            <div
+  aria-hidden="true"
+  className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[var(--purple)] opacity-[0.08] blur-[100px]"
+/>
+
             {/* Header */}
-            <div className="mb-10 flex items-center justify-between">
+            <div className="relative z-10 mb-10 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)]">
                   <Bot size={19} />

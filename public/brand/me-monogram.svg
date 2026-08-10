@@ -1,0 +1,55 @@
+﻿<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+>
+  <defs>
+    <linearGradient
+      id="mark"
+      x1="12"
+      y1="12"
+      x2="56"
+      y2="52"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0%" stop-color="#D8CCFF"/>
+      <stop offset="58%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#72E7FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect
+    x="2"
+    y="2"
+    width="60"
+    height="60"
+    rx="15"
+    fill="#050308"
+    stroke="#241633"
+    stroke-width="2"
+  />
+
+  <!-- subtle King detail -->
+  <path
+    d="M28.5 12L32 8.5L35.5 12L32 15.5Z"
+    fill="#B49AFF"
+  />
+
+  <!-- M -->
+  <path
+    d="M14 47V19L28 35L42 19V47"
+    fill="none"
+    stroke="url(#mark)"
+    stroke-width="5.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- E sharing the M's right stem -->
+  <path
+    d="M42 19H54M42 33H52M42 47H54"
+    fill="none"
+    stroke="url(#mark)"
+    stroke-width="5.5"
+    stroke-linecap="round"
+  />
+</svg>

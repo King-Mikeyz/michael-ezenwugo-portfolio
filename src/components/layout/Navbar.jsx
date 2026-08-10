@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { profile } from "@/data/profile";
 
@@ -12,13 +13,16 @@ export default function Navbar() {
             href="#home"
             className="group flex items-center gap-3"
           >
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
-              <span className="text-sm font-semibold tracking-[-0.04em]">
-                ME
-              </span>
-
-              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-[var(--purple-light)] shadow-[0_0_12px_var(--purple)]" />
-            </div>
+            <div className="relative transition duration-300 group-hover:scale-105">
+  <Image
+    src="/brand/me-monogram.svg"
+    alt=""
+    width={38}
+    height={38}
+    priority
+    className="drop-shadow-[0_0_14px_rgba(139,92,246,0.18)]"
+  />
+</div>
 
             <span className="hidden text-sm font-medium text-[var(--muted-light)] sm:block">
               Michael Ezenwugo
