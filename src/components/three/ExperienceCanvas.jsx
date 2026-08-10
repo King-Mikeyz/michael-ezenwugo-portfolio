@@ -5,7 +5,10 @@ import AICore from "./AICore";
 
 export default function ExperienceCanvas() {
   return (
-    <div className="h-[400px] w-full md:h-[550px]">
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 z-0"
+    >
       <Canvas
         camera={{
           position: [0, 0, 6],
@@ -17,7 +20,7 @@ export default function ExperienceCanvas() {
           alpha: true,
         }}
       >
-        <ambientLight intensity={0.6} />
+        <ambientLight intensity={0.5} />
 
         <pointLight
           position={[4, 4, 4]}
@@ -27,7 +30,7 @@ export default function ExperienceCanvas() {
 
         <pointLight
           position={[-4, -2, 3]}
-          intensity={15}
+          intensity={16}
           color="#8b5cf6"
         />
 

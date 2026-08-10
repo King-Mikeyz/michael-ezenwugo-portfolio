@@ -1,18 +1,24 @@
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import ScrollMotion from "@/components/layout/ScrollMotion";
+
+import ExperienceCanvas from "@/components/three/ExperienceCanvas";
+
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Journey from "@/components/sections/Journey";
 import Contact from "@/components/sections/Contact";
-import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <>
+      <ExperienceCanvas />
+
       <Navbar />
 
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
@@ -21,7 +27,11 @@ export default function Home() {
         <Contact />
       </main>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
+
+      <ScrollMotion />
     </>
   );
 }

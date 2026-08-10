@@ -1,6 +1,5 @@
 import { ArrowDownRight } from "lucide-react";
 import { profile } from "@/data/profile";
-import ExperienceCanvas from "@/components/three/ExperienceCanvas";
 
 export default function Hero() {
   return (
@@ -9,7 +8,6 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden px-6 pt-28"
     >
       <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center lg:grid-cols-2">
-        
         {/* Text */}
         <div className="relative z-10">
           <div className="mb-6 flex items-center gap-3">
@@ -59,14 +57,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 3D */}
-        <div className="relative flex items-center justify-center">
-          <ExperienceCanvas />
-
-          <p className="absolute bottom-6 right-6 text-xs uppercase tracking-[0.25em] text-[var(--muted)]">
-            Interactive system / 001
-          </p>
-        </div>
+        {/* Space reserved for the fixed 3D canvas */}
+        <div
+          aria-hidden="true"
+          className="hidden min-h-[500px] lg:block"
+        />
       </div>
     </section>
   );

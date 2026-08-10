@@ -2,7 +2,7 @@ import { skillGroups } from "@/data/skills";
 
 export default function Skills() {
   return (
-    <section className="px-6 py-32">
+    <section id="skills" className="px-6 py-32">
       <div className="mx-auto max-w-7xl">
         <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
           02 / System
