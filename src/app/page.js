@@ -9,6 +9,7 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Journey from "@/components/sections/Journey";
+import CurrentlyLearning from "@/components/sections/CurrentlyLearning";
 import AIChat from "@/components/sections/AIChat";
 import Contact from "@/components/sections/Contact";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Journey />
+        <CurrentlyLearning />
         <AIChat />
         <Contact />
       </main>

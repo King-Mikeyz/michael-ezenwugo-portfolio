@@ -97,7 +97,7 @@ export default function AIChat() {
           {/* Section intro */}
           <div>
             <p className="mb-6 text-xs uppercase tracking-[0.3em] text-[var(--cyan)]">
-              05 / Intelligence
+              06 / Intelligence
             </p>
 
             <h2 className="text-5xl font-semibold tracking-tight md:text-7xl">

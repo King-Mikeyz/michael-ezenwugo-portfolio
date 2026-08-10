@@ -80,7 +80,7 @@ export default function Contact() {
           {/* Intro */}
           <div>
             <p className="font-mono-custom mb-6 text-[10px] uppercase tracking-[0.28em] text-[var(--purple-light)]">
-              06 / Contact
+              07 / Contact
             </p>
 
             <h2 className="max-w-4xl text-5xl font-semibold tracking-[-0.055em] md:text-7xl">
