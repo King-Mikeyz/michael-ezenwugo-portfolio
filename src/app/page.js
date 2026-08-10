@@ -2,7 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollMotion from "@/components/layout/ScrollMotion";
 import BackgroundAtmosphere from "@/components/layout/BackgroundAtmosphere";
-import ExperienceCanvas from "@/components/three/ExperienceCanvas";
+
+import ThreeExperienceLoader from "@/components/three/ThreeExperienceLoader";
 
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
@@ -16,7 +17,9 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
-      <ExperienceCanvas />
+      <BackgroundAtmosphere />
+
+      <ThreeExperienceLoader />
 
       <Navbar />
 
