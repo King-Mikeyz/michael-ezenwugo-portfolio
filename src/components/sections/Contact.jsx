@@ -9,6 +9,8 @@ import {
   Send,
 } from "lucide-react";
 
+import { profile } from "@/data/profile";
+
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [feedback, setFeedback] = useState("");
@@ -76,7 +78,6 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
-          
           {/* Intro */}
           <div>
             <p className="font-mono-custom mb-6 text-[10px] uppercase tracking-[0.28em] text-[var(--purple-light)]">
@@ -109,19 +110,67 @@ export default function Contact() {
                 things matter.
               </p>
             </div>
+
+            {/* Professional links */}
+            <div className="mt-8 flex max-w-lg flex-wrap gap-3">
+              <a
+                href={`mailto:${profile.email}`}
+                className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-4 py-2.5 text-sm text-[var(--muted-light)] transition duration-300 hover:border-[var(--border-bright)] hover:bg-[var(--glow-purple)] hover:text-white"
+              >
+                Email
+
+                <ArrowUpRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-4 py-2.5 text-sm text-[var(--muted-light)] transition duration-300 hover:border-[var(--border-bright)] hover:bg-[var(--glow-purple)] hover:text-white"
+              >
+                LinkedIn
+
+                <ArrowUpRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.025] px-4 py-2.5 text-sm text-[var(--muted-light)] transition duration-300 hover:border-[var(--border-bright)] hover:bg-[var(--glow-purple)] hover:text-white"
+              >
+                GitHub
+
+                <ArrowUpRight
+                  size={14}
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+
+              <a
+                href={profile.resume}
+                download="Michael-Ezenwugo-CV.pdf"
+                className="inline-flex items-center rounded-full border border-[rgba(180,154,255,0.22)] bg-[var(--glow-purple)] px-4 py-2.5 text-sm text-white transition duration-300 hover:-translate-y-0.5 hover:border-[var(--border-bright)]"
+              >
+                Download CV ↓
+              </a>
+            </div>
           </div>
 
           {/* Contact console */}
           <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(180,154,255,0.22)] bg-[rgba(10,6,16,0.96)] p-6 shadow-[0_24px_90px_rgba(76,29,149,0.18)] md:p-8">
-            
-            {/* Local purple atmosphere */}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-[var(--purple)] opacity-[0.08] blur-[100px]"
             />
 
             <div className="relative z-10">
-              {/* Console heading */}
               <div className="mb-10 flex items-center justify-between border-b border-white/[0.08] pb-6">
                 <div>
                   <p className="font-medium">

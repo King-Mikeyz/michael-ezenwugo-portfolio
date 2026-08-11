@@ -1,404 +1,602 @@
-﻿# Michael Ezenwugo Portfolio - Project Handoff
+﻿# Michael Ezenwugo Portfolio — Project Handoff
 
 ## Project
 
 Interactive developer portfolio for Michael Ezenwugo.
 
 GitHub:
+
 https://github.com/King-Mikeyz/michael-ezenwugo-portfolio
 
-## Professional positioning
+Live portfolio:
 
-Frontend Developer evolving into AI and Data Science.
-
-Michael is a 200-level Computer Science student.
-
-He has completed Frontend Development training through Tech Crush and an AI Prompt Engineering course through Tech Crush.
-
-He is currently participating in a Tech Crush Data Science scholarship program.
-
-He is learning Python through Kaggle and is interested long-term in Data Science, Artificial Intelligence and Machine Learning.
-
-He participates in Machine Learning Collective Africa on Discord.
-
-Do not falsely position Michael as an established AI Engineer, ML Engineer or Data Scientist.
+https://michael-ezenwugo-portfolio.vercel.app/
 
 ---
 
-## Stack
+# Professional Positioning
 
-Next.js
-React
-JavaScript
-Tailwind CSS
-Three.js
-React Three Fiber
-Drei
-GSAP
-GSAP ScrollTrigger
-d3-force-3d
-Supabase
-PostgreSQL
-Google Gemini
-Lucide React
-Vercel
+Michael Ezenwugo is a Frontend Developer and Computer Science undergraduate developing toward AI and Data Science.
+
+Current positioning:
+
+Frontend Developer evolving into AI & Data Science.
+
+Michael is currently a 200-level Computer Science student.
+
+Completed training:
+
+- Frontend Development — Tech Crush
+- AI Prompt Engineering — Tech Crush
+
+Currently developing:
+
+- Python
+- Data Science
+- Artificial Intelligence
+- Machine Learning
+
+Current learning includes Kaggle and the Tech Crush Data Science scholarship program.
+
+Michael also participates in Machine Learning Collective Africa.
+
+Do not falsely position Michael as an established:
+
+- AI Engineer
+- Machine Learning Engineer
+- Data Scientist
+- Senior Software Engineer
+
+The portfolio should remain truthful about current experience while showing ambition and technical direction.
 
 ---
 
-## Main architecture
+# Professional Information
 
-src/app
+Name:
+
+Michael Ezenwugo
+
+Location:
+
+Kano, Nigeria
+
+Professional email:
+
+mikelezeking@gmail.com
+
+GitHub:
+
+https://github.com/King-Mikeyz
+
+LinkedIn:
+
+https://www.linkedin.com/in/michael-ezenwugo-b293033a8/
+
+Resume:
+
+/Michael-Ezenwugo-CV.pdf
+
+Portrait:
+
+/images/profile/michael-ezenwugo.webp
+
+---
+
+# Stack
+
+Core:
+
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+
+3D / Motion:
+
+- Three.js
+- React Three Fiber
+- Drei
+- GSAP
+- GSAP ScrollTrigger
+- d3-force-3d
+
+Backend / Data:
+
+- Supabase
+- PostgreSQL
+
+AI:
+
+- Google Gemini
+
+Tooling / Deployment:
+
+- Git
+- GitHub
+- Lucide React
+- Vercel
+
+---
+
+# Main Architecture
+
+## src/app
+
 Application routes, layout and API endpoints.
 
-src/components/layout
-Navbar, footer, background atmosphere and scroll systems.
+Important API routes include:
 
-src/components/sections
-Hero, About, Skills, Projects, Journey, AI assistant and Contact.
+- Contact API
+- Portfolio AI assistant API
 
-src/components/three
-React Three Fiber / Three.js experience.
+## src/components/layout
 
-src/data
-Structured profile, project, skill and knowledge graph data.
+Contains layout-level components including:
 
-src/lib
-Supabase server client, AI portfolio context and shared logic.
+- Navbar
+- Footer
+- background atmosphere
+- scroll systems
+
+## src/components/sections
+
+Contains the major portfolio sections including:
+
+- Hero
+- About
+- Skills
+- Projects
+- Journey
+- Currently Learning
+- AI assistant
+- Contact
+
+## src/components/three
+
+Contains the Three.js / React Three Fiber knowledge graph experience.
+
+## src/data
+
+Contains structured portfolio information.
+
+Important files include:
+
+- profile.js
+- projects.js
+- skills.js
+- skillGraph.js
+
+## src/lib
+
+Contains shared logic including:
+
+- Supabase server integration
+- AI portfolio context
+- other shared utilities
 
 ---
 
-## Current experience concept
+# V1 Visual Concept
 
-The visual identity is a dark purple technical environment.
+The portfolio uses a dark purple technical visual environment.
 
 Primary concept:
 
 MICHAEL KNOWLEDGE GRAPH
 
-The Three.js scene is not supposed to be a decorative random neural network.
+The Three.js experience should represent Michael's actual skills, tools, projects, learning and technical direction.
 
-It represents Michael's actual skills, tools, projects, learning and career direction.
+It should not become a random decorative neural-network animation.
 
-Major branches include:
+Major graph branches include:
 
-Frontend
-Data
-AI
-Tools
-Projects
-Learning
+- Frontend
+- Data
+- AI
+- Tools
+- Projects
+- Learning
 
-The graph changes which labels/connections are emphasized depending on scroll position.
+The graph can change emphasis depending on scroll position.
 
-The intended long-term interaction is inspired by semantic knowledge graphs such as Learn Anything.
+The long-term interaction direction is inspired by semantic knowledge graphs such as Learn Anything.
 
 ---
 
-## Current colors
+# Current Colors
 
 Background:
+
 #050308
 
 Surface:
+
 #100A19
 
 Primary purple:
+
 #8B5CF6
 
 Light purple:
+
 #B49AFF
 
 Deep purple:
+
 #4C1D95
 
 Energy cyan:
+
 #72E7FF
 
 Foreground:
+
 #F7F5FB
 
 Muted:
+
 #91899F
 
 ---
 
-## Current projects
+# Profile Data
 
-### LANVINS OFC
+Main profile information lives in:
 
-Strongest current frontend showcase.
+src/data/profile.js
 
-Stack includes React, Vite, Tailwind CSS and Framer Motion.
+Components should use the profile object instead of repeatedly hard-coding professional information.
 
-Has GitHub repository and live Vercel deployment.
+Current structure:
 
-### Unleash Tribe Check-in
+```javascript
+export const profile = {
+  name: "Michael Ezenwugo",
 
-Accountability/check-in application.
+  shortName: "Michael",
 
-Uses JavaScript, Supabase, PostgreSQL and Vercel.
+  role: "Frontend Developer",
 
-Useful for showing experimentation beyond static frontend development.
+  direction: "AI & Data Science",
 
-### VolunteerBridge
+  headline: "Frontend Developer evolving into AI & Data Science.",
 
-Collaborative/team capstone project.
+  description:
+    "Computer Science student building interactive digital experiences while developing deeper expertise in Python, data science, artificial intelligence, and machine learning.",
 
-Never present this as entirely Michael's work.
+  location: "Kano, Nigeria",
+
+  github: "https://github.com/King-Mikeyz",
+
+  linkedin:
+    "https://www.linkedin.com/in/michael-ezenwugo-b293033a8/",
+
+  email: "mikelezeking@gmail.com",
+
+  resume: "/Michael-Ezenwugo-CV.pdf",
+
+  portrait: "/images/profile/michael-ezenwugo.webp",
+
+  education: {
+    course: "Computer Science",
+    level: "200 Level",
+  },
+
+  learning: [
+    "Python",
+    "Data Science",
+    "Artificial Intelligence",
+    "Machine Learning",
+  ],
+};
+---
+
+# FUTURE PROJECT UPDATE GUIDE
+
+This section explains how to add future completed projects without redesigning the portfolio.
+
+The Projects section is data-driven.
+
+Main files:
+
+- src/data/projects.js
+- src/components/sections/Projects.jsx
+- src/data/skillGraph.js
+- public/images/projects/
+
+In most cases, DO NOT rewrite Projects.jsx.
+
+Projects.jsx already loops through the projects array and automatically renders:
+
+- project screenshot
+- project type
+- project title
+- description
+- focus
+- what the project demonstrates
+- technology stack
+- live-project button
+- source-code button
+
+## How to add a new project
+
+### Step 1 — Prepare the screenshot
+
+Prefer WebP when possible.
+
+Example:
+
+    my-new-project.webp
+
+Place it inside:
+
+    public/images/projects/
+
+Final path example:
+
+    public/images/projects/my-new-project.webp
+
+### Step 2 — Edit projects.js
+
+Open:
+
+    src/data/projects.js
+
+Add another object before the closing ] of the projects array.
+
+Example:
+
+    {
+      id: 4,
+
+      title: "My New Project",
+
+      type: "Full-stack Project",
+
+      description:
+        "A concise explanation of what the project does and why it was built.",
+
+      focus:
+        "The main product or engineering problems addressed.",
+
+      demonstrates:
+        "What this project demonstrates about Michael's current abilities.",
+
+      stack: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Supabase",
+      ],
+
+      github:
+        "https://github.com/King-Mikeyz/repository-name",
+
+      live:
+        "https://project-name.vercel.app",
+
+      preview:
+        "/images/projects/my-new-project.webp",
+
+      featured: true,
+    },
+
+Every project must have a unique id.
+
+### Step 3 — Projects without deployments
+
+If the source code exists but the project has not been deployed yet:
+
+    live: null,
+
+Projects.jsx will automatically hide the View Project button.
+
+The Source Code button will remain visible.
+
+This is currently how unfinished/non-deployed projects such as Unleash Tribe can be represented.
+
+Once the project is deployed, replace null with the real deployment URL.
+
+Example:
+
+    live:
+      "https://project-name.vercel.app",
+
+No Projects.jsx rewrite should be required.
+
+### Step 4 — Project screenshots
+
+The preview field must match the actual image filename.
+
+Example:
+
+    preview:
+      "/images/projects/my-new-project.webp",
+
+If the path is wrong, the project card will not display the screenshot correctly.
+
+### Step 5 — Technology stack
+
+Only list technologies genuinely used in the project.
+
+Example:
+
+    stack: [
+      "React",
+      "Next.js",
+      "Supabase",
+      "PostgreSQL",
+    ],
+
+The existing Projects component automatically renders these technologies.
+
+### Step 6 — Add important projects to the knowledge graph
+
+If the project should appear inside the Michael Knowledge Graph, edit:
+
+    src/data/skillGraph.js
+
+Add a project node:
+
+    {
+      id: "my-new-project",
+      label: "My New Project",
+      cluster: "projects",
+      type: "project",
+      status: "current",
+    },
+
+Then connect it to the Projects hub:
+
+    {
+      source: "projects",
+      target: "my-new-project",
+    },
+
+Then connect technologies genuinely used by the project.
+
+Example:
+
+    {
+      source: "react",
+      target: "my-new-project",
+      kind: "project-skill",
+    },
+
+    {
+      source: "supabase",
+      target: "my-new-project",
+      kind: "project-skill",
+    },
+
+Do not create fake skill relationships.
+
+### Step 7 — New technologies
+
+If the project uses a technology that does not yet exist in the portfolio skill system:
+
+1. Decide whether Michael has enough actual experience to list it.
+2. Add it to src/data/skills.js when appropriate.
+3. Add a corresponding node to src/data/skillGraph.js.
+4. Connect the technology to its correct cluster.
+5. Connect it to relevant projects.
+
+Do not present experimental exposure as expert-level proficiency.
+
+### Step 8 — Test the new project
+
+Run:
+
+    npm run dev
+
+Check:
+
+- screenshot
+- project title
+- description
+- stack
+- Source Code link
+- View Project link
+- responsive layout
+- knowledge graph if changed
+
+Then run:
+
+    npm run build
+
+Only commit after the build succeeds.
 
 ---
 
-## Backend
+# FUTURE V2 / REFINEMENT ROADMAP
 
-Contact form:
+The following items are intentionally not required for V1.
 
-Browser
--> /api/contact
--> Next.js Route Handler
--> Supabase
--> public.contact_messages
+## Mobile knowledge graph
 
-The Supabase table has Row Level Security enabled.
+The current portfolio intentionally uses a simplified non-3D mobile experience.
 
-The server uses a secret Supabase key.
+A future V2 improvement can introduce a mobile-optimized knowledge graph instead of simply using the full desktop Three.js scene.
 
-Never expose the Supabase secret key to browser code.
+Possible approach:
 
----
+- fewer nodes
+- fewer labels
+- lower device pixel ratio
+- reduced particle/connection count
+- simplified animation
+- no expensive hover behavior
+- touch-based interaction
+- mobile-specific camera position
+- respect prefers-reduced-motion
 
-## AI assistant
+Do not simply force the full desktop Three.js scene onto small phones without performance testing.
 
-Component:
-src/components/sections/AIChat.jsx
+## Knowledge graph improvements
 
-Endpoint:
-src/app/api/ask/route.js
+Possible future improvements:
 
-Knowledge:
-src/lib/portfolio-context.js
+- clickable nodes
+- hover/tap information panels
+- stronger project-to-technology connections
+- Skill Explorer synchronization
+- AI responses highlighting graph nodes
+- improved camera choreography
+- section-aware node highlighting
 
-Provider:
-Google Gemini
+## Project improvements
 
-The assistant should only answer using publicly appropriate portfolio information.
+As Michael completes more work:
 
-Responses are deliberately cleaned to remove:
+- replace unfinished projects with stronger completed projects when appropriate
+- add live deployment links
+- improve screenshots
+- add richer case studies
+- document the problem solved
+- explain Michael's exact contribution to team projects
+- show measurable outcomes when truthful and available
 
-Markdown
-asterisks
-bullet symbols
-numbered-list prefixes
-em dashes
-en dashes
+## Professional improvements
 
-The writing style should remain concise and human.
+Possible additions:
 
-Do not send sensitive/private information through the public AI portfolio context.
+- custom domain
+- professional X account if Michael actively posts technical content
+- professional social accounts only when relevant
+- updated CV as experience grows
+- internship/work experience
+- certifications
+- open-source contributions
 
----
+Facebook and Instagram are intentionally not V1 priorities unless they become professionally relevant.
 
-## Environment variables
+## Performance and QA
 
-Local secrets are stored in .env.local.
+Future measured work may include:
 
-Required variables:
+- Lighthouse audit
+- Core Web Vitals
+- image optimization
+- Three.js performance profiling
+- mobile rendering profiling
+- accessibility audit
+- keyboard navigation
+- reduced-motion verification
 
-SUPABASE_URL
-SUPABASE_SECRET_KEY
-GEMINI_API_KEY
-
-Never commit .env.local.
-
-These same variables must be configured in the production hosting environment.
-
----
-
-## Important design decisions
-
-Do not return to the old giant wireframe/genome ball.
-
-Do not move the 3D object aggressively left and right while scrolling.
-
-The desired motion is cinematic and controlled.
-
-Scroll should gradually reveal or focus different parts of Michael's knowledge graph.
-
-The graph should eventually become even more integrated with content.
-
-Possible future behavior:
-
-Skills section focuses frontend/data/AI clusters.
-
-Projects section highlights technologies connected to each project.
-
-AI responses may eventually return node IDs so relevant graph nodes illuminate.
-
-Journey may convert part of the graph into a learning trajectory.
-
-Contact may collapse the graph back toward the Michael node.
+Do not optimize blindly. Measure first.
 
 ---
 
-## Known unfinished items
+# FUTURE SESSION RULE
 
-Professional portrait is still missing.
+When returning to this project:
 
-Resume/CV needs rewriting and completion.
+1. Read PROJECT-HANDOFF.md first.
+2. Inspect current GitHub repository code.
+3. Do not assume the portfolio is unchanged.
+4. Read files before replacing them.
+5. Preserve the data-driven Projects architecture.
+6. Keep professional information truthful.
+7. Run npm run build before committing important changes.
 
-Phone number, professional email and LinkedIn details need final confirmation.
-
-Custom domain is not configured yet.
-
-Knowledge graph is scroll-reactive but not yet fully clickable.
-
-Node hover information panels are a future enhancement.
-
-AI-controlled graph navigation is a future enhancement.
-
-Project screenshots may need better manually curated images.
-
-Mobile intentionally uses a simplified non-3D experience.
-
-Full performance/Lighthouse optimization remains a future pass.
-
-Open Graph/social sharing image remains to be designed.
-
----
-
-## Known development issue
-
-A MetaMask browser extension previously injected an error into localhost.
-
-The stack trace originated from chrome-extension:// rather than portfolio code.
-
-This is not part of the application.
-
-Test in Incognito or disable the extension when debugging if necessary.
-
----
-
-## Useful commands
-
-Development:
-
-npm run dev
-
-Production build:
-
-npm run build
-
-Production test:
-
-npm run start
-
-Git:
-
-git add .
-git commit -m "Human readable commit message"
-git push
-
----
-
-## Working style requested by Michael
-
-Michael prefers short implementation batches rather than huge tutorials.
-
-Give approximately five to seven clear steps per coding pass.
-
-When folders/files need to be created, provide PowerShell commands instead of asking him to create them manually.
-
-Commit messages should sound human.
-
-Avoid Conventional Commit prefixes such as feat:, fix: and chore:.
-
-Michael is learning React and JavaScript, so explain important architecture without turning every step into a long lecture.
-
-Cross-check code before giving replacements.
-
----
-
-## Recommended next session
-
-Do not add a large new feature immediately.
-
-First inspect the deployed V1 visually.
-
-Priority order:
-
-1. Improve knowledge graph composition and labels.
-2. Add semantic node hover/click information.
-3. Improve scroll-driven camera choreography.
-4. Add professional portrait.
-5. Rewrite and integrate resume.
-6. Improve project screenshots and case studies.
-7. Connect AI answers to graph highlighting.
-8. Run full responsive/accessibility/performance pass.
-9. Add custom domain, sitemap, robots and social metadata.
-
-The portfolio should remain truthful, performant and recruiter-friendly even as the visual experience becomes more ambitious.
-
----
-
-# Refinement Update
-
-The portfolio has now completed its first major production refinement.
-
-## Added since the original handoff
-
-Custom ME favicon and navbar identity.
-
-Dark purple premium visual system.
-
-Solid high-contrast AI assistant surface.
-
-Solid premium contact console.
-
-Project cards upgraded into mini case studies.
-
-LANVINS includes a working live project link.
-
-Knowledge graph upgraded from decorative nodes into a semantic skill graph.
-
-Skill Explorer now communicates with the Three.js graph.
-
-Hovering skills can focus their related graph neighborhood.
-
-Currently Learning section added.
-
-Learning direction is shown as Now, Next and Direction rather than fake proficiency percentages.
-
-Three.js is loaded through a client-only dynamic wrapper to reduce first-render interference.
-
-Open Graph social sharing image added.
-
-SEO metadata improved.
-
-robots.txt added.
-
-sitemap.xml added.
-
-## Current major remaining work
-
-Get Michael's exact professional LinkedIn URL.
-
-Confirm Michael's public professional email.
-
-Finish and rewrite Michael's CV/resume.
-
-Add the finished resume PDF and a visible Resume link.
-
-Get or create a professional portrait.
-
-Evaluate generated King Michael / ME logo concepts against the current monogram.
-
-Run a measured Lighthouse/Core Web Vitals audit.
-
-Improve any remaining mobile layout issues.
-
-Possibly connect AI answers directly to knowledge graph node highlighting.
-
-Possibly add richer project case-study pages after more projects are completed.
-
-Do not add new decorative effects unless they improve the portfolio's story or usability.
-
-The next session should prioritize real professional information and measured QA rather than more feature development.

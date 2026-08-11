@@ -12,13 +12,18 @@ export const profile = {
   description:
     "Computer Science student building interactive digital experiences while developing deeper expertise in Python, data science, artificial intelligence, and machine learning.",
 
-  location: "Nigeria",
+  location: "Kano, Nigeria",
 
   github: "https://github.com/King-Mikeyz",
 
-  linkedin: "",
+  linkedin:
+    "https://www.linkedin.com/in/michael-ezenwugo-b293033a8/",
 
-  email: "",
+  email: "mikelezeking@gmail.com",
+
+  resume: "/Michael-Ezenwugo-CV.pdf",
+
+  portrait: "/images/profile/michael-ezenwugo.webp",
 
   education: {
     course: "Computer Science",
